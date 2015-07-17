@@ -1,7 +1,7 @@
 {
-  "name": "Node.js Getting Started",
-  "description": "A barebones Node.js app using Express 4",
-  "repository": "https://github.com/heroku/node-js-getting-started",
-  "logo": "http://node-js-sample.herokuapp.com/node.svg",
+  "name": "bemotics",
+  "description": "A simple Node.js app for SWADS",
+  "repository": "https://github.com/dorothyjung/bemotics",
+  "logo": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Download_font_awesome.svg",
   "keywords": ["node", "express", "static"]
 }
