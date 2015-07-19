@@ -3,7 +3,11 @@
 <head>
   <% include ../partials/header.ejs %>
   <% include ../partials/headset.ejs %>
-  <link rel="stylesheet" type="text/css" href="/stylesheets/graphs.css" />  
+
+  <% function ELSPlugin(){ %>
+    <% return document.getElementById('plugin0') %>
+  <% } %>
+
 </head>
 
 <body>
@@ -19,7 +23,45 @@
       </div>
   </div> <!-- end block video -->
 
+<script type="text/javascript">
+// Load the Visualization API and the piechart package.
+google.load('visualization', '1.0', {'packages':['corechart']});
 
+// Set a callback to run when the Google Visualization API is loaded.
+google.setOnLoadCallback(drawChart);
+
+// Callback that creates and populates a data table,
+// instantiates the pie chart, passes in the data and
+// draws it.
+function drawChart() {
+
+  // Create the data table.
+  var data = new google.visualization.DataTable();
+  data.addColumn('string', 'Emotion');
+  data.addColumn('number', 'Signal');
+  data.addRows([
+    ['Engagement', 3],
+    ['Frustration', 1],
+    ['Meditation', 1],
+    ['Short-Term Excitement', 1],
+    ['Long-Term Excitement', 2]
+  ]);
+
+  // Set chart options
+  var options = {'title':'Brainwave Readings',
+                 'width':400,
+                 'height':300};
+
+  var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+  chart.draw(data, options);
+
+}
+
+</script>
+
+
+  <!--Div that will hold the pie chart-->
+  <div id="chart_div"></div>
 
   <!-- Footer -->
   <footer>

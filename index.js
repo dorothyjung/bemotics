@@ -27,6 +27,7 @@ app.get('/dashboard', function(request, response) {
 });
 
 app.get('/realtime', function(request, response) {
+  console.log('begin graph plotting functionality');
   response.render('pages/realtime');
 });
 
