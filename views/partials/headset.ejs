@@ -1,0 +1,18 @@
+<script type="text/javascript" src = "{% static "js/EdkDll.js" %}"></script>
+<script type="text/javascript" src = "{% static "js/EmoState.js" %}"></script>
+<script type="text/javascript" src = "{% static "js/EmoEngine.js" %}"></script>
+<script type="text/javascript" src = "{% static "js/headsetInteraction.js" %}"></script>
+
+<!-- Emotiv Browser SDK compatibility -->
+<object id="plugin0" type="application/x-emotivlifesciences" width="0" height="0">
+  <param name="onload" value="pluginLoaded" />
+</object>
+
+<script type="text/javascript">
+function ELSPlugin(){
+  return document.getElementById('plugin0')
+}
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>

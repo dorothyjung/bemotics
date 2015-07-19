@@ -22,8 +22,12 @@ app.get('/login', function(request, response) {
 	response.render('pages/login');
 });
 
-app.get('/home', function(request, response) {
-	response.render('pages/home');
+app.get('/dashboard', function(request, response) {
+  response.render('pages/dashboard');
+});
+
+app.get('/realtime', function(request, response) {
+  response.render('pages/realtime');
 });
 
 app.get('/db', function (request, response) {
