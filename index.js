@@ -22,6 +22,10 @@ app.get('/login', function(request, response) {
 	response.render('pages/login');
 });
 
+app.get('/home', function(request, response) {
+	response.render('pages/home');
+});
+
 app.get('/db', function (request, response) {
   pg.connect(process.env.DATABASE_URL, function(err, client, done) {
     client.query('SELECT * FROM test_table', function(err, result) {
