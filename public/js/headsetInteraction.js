@@ -1,3 +1,7 @@
+function ELSPlugin(){
+  return document.getElementById('plugin0')
+}
+
 function checkPluginExits(){
   var L = navigator.plugins.length;
   for(var i = 0; i < L; i++) {
@@ -39,41 +43,20 @@ $(document).ready(function(e){
   updateEmoEngine();
 });
 
-var lastResponseIndex = -1;
 function updateEmoEngine(){   
 
-    engine.ProcessEvents(500);
+  engine.ProcessEvents(500);
 
-    console.log("Engagement: " + es.AffectivGetEngagementBoredomScore())
-    console.log("Frustration: " + es.AffectivGetFrustrationScore())
-    console.log("Short term Excitement: " + es.AffectivGetExcitementShortTermScore())
-    console.log("Long term Excitement: " + es.AffectivGetExcitementLongTermScore())
+  var EngagementBoredomScore = es.AffectivGetEngagementBoredomScore()
+  var FrustrationScore = es.AffectivGetFrustrationScore()
+  var ExcitementShortTermScore = es.AffectivGetExcitementShortTermScore()
+  var ExcitementLongTermScore = es.AffectivGetExcitementLongTermScore()
 
-    //Engagement: 0
-    if (es.AffectivGetEngagementBoredomScore() > .8 && lastResponseIndex !== 0){
-        console.log("Engagement: " + es.AffectivGetEngagementBoredomScore())
-        lastResponseIndex = 0
-        //plot Engagement
-    }
-    //Frustration: 1
-    if (es.AffectivGetFrustrationScore() > .8 && lastResponseIndex !== 1){
-        console.log("Frustration: " + es.AffectivGetFrustrationScore())
-        lastResponseIndex = 1
-        //plot Frustration
-    }
-    //Short term excitement: 2
-    else if (es.AffectivGetExcitementShortTermScore() > .8 && lastResponseIndex !== 2){
-        console.log("Short term Excitement: " + es.AffectivGetExcitementShortTermScore())
-        lastResponseIndex = 2
-        //plot ShortTerm
-    }
-    //Long term excitement: 3
-    else if (es.AffectivGetExcitementLongTermScore() > .8 && lastResponseIndex !== 3){
-        console.log("Long term Excitement: " + es.AffectivGetExcitementLongTermScore())
-        lastResponseIndex = 3
-        //plot LongTerm
-    }
-    
-    setTimeout("updateEmoEngine()",50);
+  console.log("Engagement: " + EngagementBoredomScore)
+  console.log("Frustration: " + FrustrationScore)
+  console.log("Short term Excitement: " + ExcitementShortTermScore)
+  console.log("Long term Excitement: " + ExcitementLongTermScore)
+  
+  setTimeout("updateEmoEngine()",50);
 }
 
