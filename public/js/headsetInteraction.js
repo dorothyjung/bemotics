@@ -52,6 +52,7 @@ function updateEmoEngine(){
   engine.ProcessEvents(500);
 
   var currMsec = getElapsedTime(startMsec);
+  console.log("Elapsed time: " + currMsec);
 
   var EngagementBoredomScore = es.AffectivGetEngagementBoredomScore();
   var FrustrationScore = es.AffectivGetFrustrationScore();
