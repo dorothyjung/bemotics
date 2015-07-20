@@ -79,17 +79,15 @@ function getElapsedTime(startTime){
 
 function sendToData(time, EngagementBoredomScore, FrustrationScore, ExcitementShortTermScore, ExcitementLongTermScore){
   pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-    client.query('client.query("CREATE TABLE IF NOT EXISTS test_data_1(
-                time float,
-                engagement float,
-                frustration float,
-                shorttermexcitement float,
-                longtermexcitement float)");', function(err, result) {
-      done();
-      if (err)
-       { console.error(err); response.send("Error " + err); }
-      else
-       { console.log("table created"); }
+    client.query('client.query("CREATE TABLE IF NOT EXISTS test_data_1(time float,engagement float,frustration float, shorttermexcitement float, longtermexcitement float)");',
+      function(err, result)
+    {
+        done();
+        if (err)
+         { console.error(err); response.send("Error " + err); }
+        else
+         { console.log("table created"); }
+    
     });
   });
 }
