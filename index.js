@@ -27,9 +27,20 @@ app.get('/dashboard', function(request, response) {
 });
 
 app.get('/realtime', function(request, response) {
-  console.log('begin graph plotting functionality');
   response.render('pages/realtime');
 });
+
+app.get('/run_trial', function(request, response) {
+  pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+    client.query('SELECT * FROM test_table', function(err, result) {
+      done();
+      if (err)
+       { console.error(err); response.send("Error " + err); }
+      else
+       { response.render('pages/run_trial', {results: result.rows} ); }
+    });
+  });
+})
 
 app.get('/db', function (request, response) {
   pg.connect(process.env.DATABASE_URL, function(err, client, done) {
