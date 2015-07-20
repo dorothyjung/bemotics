@@ -1,3 +1,7 @@
+var engine, es;
+var startMsec;
+var pg = require('pg');
+
 function ELSPlugin(){
   return document.getElementById('plugin0')
 }
@@ -33,30 +37,71 @@ window.onload=function(){
 };
 
 //https://github.com/ducnguy/eric/blob/master/js/userInteraction.js
-var engine, es;
 $(document).ready(function(e){ 
   engine = EmoEngine.instance()
   console.log(engine)
   es = new EmoState();
 
+  msec = new Date().getTime();
   engine.Connect();
   updateEmoEngine();
 });
 
-function updateEmoEngine(){   
+function updateEmoEngine(){
 
   engine.ProcessEvents(500);
 
-  var EngagementBoredomScore = es.AffectivGetEngagementBoredomScore()
-  var FrustrationScore = es.AffectivGetFrustrationScore()
-  var ExcitementShortTermScore = es.AffectivGetExcitementShortTermScore()
-  var ExcitementLongTermScore = es.AffectivGetExcitementLongTermScore()
+  var currMsec = getElapsedTime(startMsec);
+
+  var EngagementBoredomScore = es.AffectivGetEngagementBoredomScore();
+  var FrustrationScore = es.AffectivGetFrustrationScore();
+  var ExcitementShortTermScore = es.AffectivGetExcitementShortTermScore();
+  var ExcitementLongTermScore = es.AffectivGetExcitementLongTermScore();
 
   console.log("Engagement: " + EngagementBoredomScore)
   console.log("Frustration: " + FrustrationScore)
   console.log("Short term Excitement: " + ExcitementShortTermScore)
   console.log("Long term Excitement: " + ExcitementLongTermScore)
   
-  setTimeout("updateEmoEngine()",50);
+  sendToDatabase(currMsec,
+                EngagementBoredomScore,
+                FrustrationScore,
+                ExcitementShortTermScore,
+                ExcitementLongTermScore);
+  // setTimeout("updateEmoEngine()",50);
 }
 
+function getElapsedTime(startTime){
+  currMsec = new Date().getTime();
+  return currMsec - startTime;
+}
+
+function sendToData(time, EngagementBoredomScore, FrustrationScore, ExcitementShortTermScore, ExcitementLongTermScore){
+  pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+    client.query('client.query("CREATE TABLE IF NOT EXISTS test_data_1(
+                time float,
+                engagement float,
+                frustration float,
+                shorttermexcitement float,
+                longtermexcitement float)");', function(err, result) {
+      done();
+      if (err)
+       { console.error(err); response.send("Error " + err); }
+      else
+       { console.log("table created"); }
+    });
+  });
+}
+
+
+// client.query("INSERT INTO test_data_1(
+//               time, 
+//               engagement, 
+//               frustration, 
+//               shorttermexcitement, 
+//               longtermexcitement) values ($1, $2, $3, $4, $5)",
+//               [time,
+//               EngagementBoredomScore,
+//               FrustrationScore,
+//               ExcitementShortTermScore,
+//               ExcitementLongTermScore]);
