@@ -1,6 +1,5 @@
 var engine, es;
 var startMsec;
-var pg = require('pg');
 
 function ELSPlugin(){
   return document.getElementById('plugin0')

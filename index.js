@@ -1,6 +1,13 @@
+/* INIT */
 var express = require('express');
 var app = express();
+var http = require('http');
+var request = require('request');
 var pg = require('pg');
+
+var bodyParser = require('body-parser');
+var dbOperations = require('./routes/pgops.js');
+var logFmt = require("logfmt");
 
 // var morgan = require('morgan');             // log requests to the console (express4)
 // var bodyParser = require('body-parser');    // pull information from HTML POST (express4)
@@ -9,6 +16,8 @@ var pg = require('pg');
 // pg.connect(process.env.DATABASE_URL);
 // app.use(morgan('dev'));
 
+
+/* CONFIG */
 // set the port of our application
 // process.env.PORT lets the port be set by Heroku
 app.set('port', (process.env.PORT || 5000));
@@ -22,6 +31,8 @@ app.set('views', __dirname + '/views');
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 
+
+/* ROUTING  - VIEWS */
 // set the home page route
 app.get('/', function(request, response) {
 
@@ -49,9 +60,30 @@ app.get('/run_trial', function(request, response) {
   response.render('pages/run_trial');
 });
 
+/* ROUTING - POSTGRES */
+app.get('/db/readRecords', function(req,res){
+    dbOperations.getRecords(req,res);
+});
+
+app.get('/db/addRecord', function(req,res){
+    dbOperations.addRecord(req,res);
+});
+
+app.get('/db/delRecord', function(req,res){
+    dbOperations.delRecord(req,res);
+});
+
+app.get('/db/createTable', function(req,res){
+    dbOperations.createTable(req,res);
+});
+
+app.get('/db/dropTable', function(req,res){
+    dbOperations.dropTable(req,res);
+});
+
 app.get('/db', function (request, response) {
   pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-    client.query('SELECT * FROM test_table', function(err, result) {
+    client.query('SELECT * FROM test_data_1', function(err, result) {
       done();
       if (err)
        { console.error(err); response.send("Error " + err); }

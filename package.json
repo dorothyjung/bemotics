@@ -9,7 +9,13 @@
   "dependencies": {
     "pg": "4.x",
     "ejs": "^2.3.1",
-    "express": "~4.9.x"
+    "express": "~4.9.x",
+    "http": "~0.0.0",
+    "request": "~2.36.0",
+    "logfmt": "~1.1.2",
+    "body-parser": "~1.6.2",
+    "serve-favicon": "*",
+    "cookie-parser": "~1.0.1",    
   },
   "engines": {
     "node": "0.12.2"
