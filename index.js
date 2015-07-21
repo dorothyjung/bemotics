@@ -52,7 +52,7 @@ app.get('/run_trial', function(request, response) {
   response.render('pages/run_trial');
 });
 
-app.post('/db', function (request, response) {
+app.get('/db', function (request, response) {
   pg.connect(process.env.DATABASE_URL, function(err, client, done) {
     client.query('SELECT * FROM test_data_1', function(err, result) {
       done();
