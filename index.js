@@ -2,6 +2,7 @@
 var express = require('express');
 var app = express();
 var pg = require('pg');
+var bodyParser = require('body-parser');
 
 // var morgan = require('morgan');             // log requests to the console (express4)
 // var bodyParser = require('body-parser');    // pull information from HTML POST (express4)
@@ -23,6 +24,8 @@ app.set('views', __dirname + '/views');
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
 /* ROUTING */
 // set the home page route
@@ -63,6 +66,12 @@ app.get('/db', function (request, response) {
     });
   });
 });
+
+app.post('/db', function(req, res){
+  console.log(req.body);
+  res.json(req.body);
+});
+
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
