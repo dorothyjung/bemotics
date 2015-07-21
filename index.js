@@ -4,24 +4,14 @@ var app = express();
 var pg = require('pg');
 var bodyParser = require('body-parser');
 
-// set the port of our application
-// process.env.PORT lets the port be set by Heroku
 app.set('port', (process.env.PORT || 5000));
-
-// make express look in the public directory for assets (css/js/img)
 app.use(express.static(__dirname + '/public'));
-
-// views is directory for all template files
 app.set('views', __dirname + '/views');
-
-// set the view engine to ejs
 app.set('view engine', 'ejs');
-
-var jsonParser = app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
 /* ROUTING - VIEWS */
-// set the home page route
 app.get('/', function(request, response) {
   response.render('pages/index');
 });
