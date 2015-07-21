@@ -67,7 +67,7 @@ app.get('/db', function (request, response) {
   });
 });
 
-app.post('/db', jsonParser, function(req, res){
+app.post('/db', function(req, res){
   console.log(req.body);
   res.json(req.body);
 
