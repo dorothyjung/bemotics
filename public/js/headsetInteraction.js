@@ -41,8 +41,14 @@ $(document).ready(function(e){
   es = new EmoState();
 
   engine.Connect();
+});
+
+$('#startStream').on('click', function() { 
   updateEmoEngine();
 });
+
+$('#startStream').off('click');
+
 
 function updateEmoEngine(){
 
@@ -66,11 +72,11 @@ function updateEmoEngine(){
                 FrustrationScore,
                 ExcitementShortTermScore,
                 ExcitementLongTermScore);
-  // setTimeout("updateEmoEngine()",50);
+
+  setTimeout("updateEmoEngine()",50);
 }
 
 function sendToDatabase(seconds, EngagementBoredomScore, FrustrationScore, ExcitementShortTermScore, ExcitementLongTermScore){
-
   $.post("/db",
   {
       time: seconds,
@@ -82,17 +88,5 @@ function sendToDatabase(seconds, EngagementBoredomScore, FrustrationScore, Excit
   function(data, status){
     console.log("Data: " + data + "\nStatus: " + status)
   });
-
 }
 
-// INSERT INTO test_data_1(
-// time, 
-// engagement, 
-// frustration, 
-// shorttermexcitement, 
-// longtermexcitement) values
-// (0.0,
-// 1,
-// 1,
-// 1,
-// 1);
