@@ -93,14 +93,14 @@ function sendToData(time, EngagementBoredomScore, FrustrationScore, ExcitementSh
 }
 
 
-// client.query("INSERT INTO test_data_1(
-//               time, 
-//               engagement, 
-//               frustration, 
-//               shorttermexcitement, 
-//               longtermexcitement) values ($1, $2, $3, $4, $5)",
-//               [time,
-//               EngagementBoredomScore,
-//               FrustrationScore,
-//               ExcitementShortTermScore,
-//               ExcitementLongTermScore]);
+// INSERT INTO test_data_1(
+// time, 
+// engagement, 
+// frustration, 
+// shorttermexcitement, 
+// longtermexcitement) values
+// (0.0,
+// 1,
+// 1,
+// 1,
+// 1);
