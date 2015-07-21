@@ -24,7 +24,7 @@ app.set('views', __dirname + '/views');
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 
-app.use(bodyParser.json()); // for parsing application/json
+var jsonParser = app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
 /* ROUTING */
@@ -67,9 +67,10 @@ app.get('/db', function (request, response) {
   });
 });
 
-app.post('/db', function(req, res){
+app.post('/db', jsonParser, function(req, res){
   console.log(req.body);
   res.json(req.body);
+
 });
 
 
