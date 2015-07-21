@@ -47,6 +47,10 @@ $(document).on('click', '#startStream', function() {
   updateEmoEngine();
 });
 
+$(document).off('click', '#startStream', function() {
+  updateEmoEngine();
+});
+
 
 function updateEmoEngine(){
 
