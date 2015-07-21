@@ -1,5 +1,4 @@
 var engine, es;
-var startMsec;
 
 function ELSPlugin(){
   return document.getElementById('plugin0')
@@ -41,7 +40,6 @@ $(document).ready(function(e){
   console.log(engine)
   es = new EmoState();
 
-  msec = new Date().getTime();
   engine.Connect();
   updateEmoEngine();
 });
@@ -50,7 +48,7 @@ function updateEmoEngine(){
 
   engine.ProcessEvents(500);
 
-  var currMsec = getElapsedTime(startMsec);
+  var currMsec = new Date().getTime();
   console.log("Elapsed time: " + currMsec);
 
   var EngagementBoredomScore = es.AffectivGetEngagementBoredomScore();
@@ -69,11 +67,6 @@ function updateEmoEngine(){
                 ExcitementShortTermScore,
                 ExcitementLongTermScore);
   // setTimeout("updateEmoEngine()",50);
-}
-
-function getElapsedTime(startTime){
-  currMsec = new Date().getTime();
-  return currMsec - startTime;
 }
 
 function sendToDatabase(seconds, EngagementBoredomScore, FrustrationScore, ExcitementShortTermScore, ExcitementLongTermScore){
