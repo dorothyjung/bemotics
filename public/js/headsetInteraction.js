@@ -43,14 +43,15 @@ $(document).ready(function(e){
   engine.Connect();
 });
 
+var timer;
+
 $(document).on('click', '#startStream', function() {
   updateEmoEngine();
 });
 
-$(document).off('click', '#startStream', function() {
-  updateEmoEngine();
+$(document).on('click', '#stopStream', function() {
+  clearTimeout(timer);
 });
-
 
 function updateEmoEngine(){
 
@@ -75,7 +76,7 @@ function updateEmoEngine(){
                 ExcitementShortTermScore,
                 ExcitementLongTermScore);
 
-  setTimeout("updateEmoEngine()",50);
+  timer = setTimeout("updateEmoEngine()",50);
 }
 
 function sendToDatabase(seconds, EngagementBoredomScore, FrustrationScore, ExcitementShortTermScore, ExcitementLongTermScore){
