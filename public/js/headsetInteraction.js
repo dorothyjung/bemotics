@@ -80,7 +80,7 @@ function sendToDatabase(seconds, EngagementBoredomScore, FrustrationScore, Excit
       longtermexcitement: ExcitementLongTermScore
   },
   function(data, status){
-      alert("Data: " + data + "\nStatus: " + status);
+    console.log("Data: " + data + "\nStatus: " + status)
   });
 
 }

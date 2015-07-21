@@ -71,6 +71,9 @@ app.post('/db', function(req, res){
   console.log(req.body);
   res.json(req.body);
 
+  console.log(req.body.time);
+  console.log(req.body.engagement)
+
 });
 
 
