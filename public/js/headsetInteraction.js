@@ -43,11 +43,9 @@ $(document).ready(function(e){
   engine.Connect();
 });
 
-$('#startStream').on('click', function() { 
+$(document).on('click', '#startStream', function() {
   updateEmoEngine();
 });
-
-$('#startStream').off('click');
 
 
 function updateEmoEngine(){
