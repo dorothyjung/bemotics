@@ -53,7 +53,6 @@ $(document).on('click', '#runNewTrial', function() {
   function(data, status){
     console.log("Sending new trial request")
   });
-}
 });
 
 $(document).on('click', '#startStream', function() {
