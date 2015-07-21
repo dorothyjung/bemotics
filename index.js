@@ -1,3 +1,4 @@
+/* INIT, CONFIGS */
 var express = require('express');
 var app = express();
 var pg = require('pg');
@@ -22,6 +23,8 @@ app.set('views', __dirname + '/views');
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 
+
+/* ROUTING */
 // set the home page route
 app.get('/', function(request, response) {
 
