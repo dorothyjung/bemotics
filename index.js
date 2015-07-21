@@ -71,9 +71,23 @@ app.post('/db', function(req, res){
   console.log(req.body);
   res.json(req.body);
 
-  console.log(req.body.time);
-  console.log(req.body.engagement)
+  var sec = req.body.time;
+  var engage = req.body.engagement;
+  var frust = req.body.frustration;
+  var ste = req.body.shorttermexcitement;
+  var lte = req.body.longtermexcitement;
 
+  pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+    client.query('INSERT INTO test_data_1(time, engagement, frustration, shorttermexcitement, longtermexcitement) values($1,$2,$3,$4,$5);',
+        [sec, engage, frust, ste, lte],
+        function(err, result) {
+      done();
+      if (err)
+       { console.error(err); response.send("Error " + err); }
+      else
+       { console.log("Successfully inputted values into database"); }
+    });
+  });
 });
 
 
