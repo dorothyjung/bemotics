@@ -9,13 +9,28 @@
 <% include ../partials/nav.ejs %>
 
 <div class="container">
-<h2>Database Results</h2>
+<h2>Headset data for test_user_1</h2>
 
-<ul>
-    <% results.forEach(function(r) { %>
-        <li><%= r.time %> : <%= r.engagement %>, <%= r.frustration %>, <%= r.shorttermexcitement %>, <%= r.longtermexcitement %></li>
-    <% }); %>
-</ul>
+<table class="table table-condensed">
+  <tr>
+    <td>Time (ms)</td>
+    <td>Engagement</td> 
+    <td>Frustration</td>
+    <td>Short-Term Excitement</td>
+    <td>Long-Term Excitement</td> 
+  </tr>
+
+  <% results.forEach(function(r) { %>
+  	<tr>
+			<td><%= r.time %></td>
+			<td><%= r.engagement %></td>
+			<td><%= r.frustration %></td>
+			<td><%= r.shorttermexcitement %></td>
+			<td><%= r.longtermexcitement %></td>
+  	</tr>
+	<% }); %>
+  
+</table>
 
 </div>
 
