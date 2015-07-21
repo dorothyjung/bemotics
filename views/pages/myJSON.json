@@ -1,0 +1,34 @@
+{
+    "cols": [
+        {
+            "label": "Answers",
+            "type": "string"
+        },
+        {
+            "label": "Answers",
+            "type": "number"
+        }
+    ],
+    "rows": [
+        {
+            "c": [
+                {
+                    "v": "YES"
+                },
+                {
+                    "v": 23
+                }
+            ]
+        },
+        {
+            "c": [
+                {
+                    "v": "NO"
+                },
+                {
+                    "v": 1
+                }
+            ]
+        }
+    ]
+}

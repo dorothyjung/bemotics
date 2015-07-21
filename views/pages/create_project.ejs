@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/header.ejs %>
+  <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}s/stylesheets/landing-page.css" />
+</head>
+
+<body>
+
+  <% include ../partials/nav.ejs %>
+
+
+    <form class="form-horizontal" style="text-align:center">
+    <fieldset>
+
+    <!-- Form Name -->
+    <legend>Form Name</legend>
+
+    <!-- Text input-->
+    <div class="control-group">
+      <label class="control-label" for="textinput">Project Name</label>
+      <div class="controls">
+        <input id="textinput" name="textinput" placeholder="Name" class="input-xlarge" type="text">
+        
+      </div>
+    </div>
+
+    <!-- File Button --> 
+    <div class="control-group" style="text-align:center">
+      <label class="control-label" for="Upload Video file" style="text-align:center">File Button</label>
+      <div class="controls" style="text-align:center">
+        <input id="Upload Video file" name="Upload Video file" class="input-file" type="file" style="text-align:center">
+      </div>
+    </div>
+
+    <!-- Button -->
+    <div class="control-group">
+      <label class="control-label" for=""></label>
+      <div class="controls">
+        <a href="/participants" class="btn btn-primary">Create Project</a>
+      </div>
+    </div>
+
+    </fieldset>
+    </form>
+
+
+    <!-- Footer -->
+    <footer>
+      <% include ../partials/footer.ejs %>
+    </footer>
+
+</body>
+</html>
