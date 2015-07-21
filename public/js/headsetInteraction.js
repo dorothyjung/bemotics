@@ -80,7 +80,7 @@ function updateEmoEngine(){
 }
 
 function sendToDatabase(seconds, EngagementBoredomScore, FrustrationScore, ExcitementShortTermScore, ExcitementLongTermScore){
-  $.post("/db",
+  $.post("/db/input_eeg_data",
   {
       time: seconds,
       engagement: EngagementBoredomScore,

@@ -4,13 +4,6 @@ var app = express();
 var pg = require('pg');
 var bodyParser = require('body-parser');
 
-// var morgan = require('morgan');             // log requests to the console (express4)
-// var bodyParser = require('body-parser');    // pull information from HTML POST (express4)
-// var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
-
-// pg.connect(process.env.DATABASE_URL);
-// app.use(morgan('dev'));
-
 // set the port of our application
 // process.env.PORT lets the port be set by Heroku
 app.set('port', (process.env.PORT || 5000));
@@ -27,11 +20,9 @@ app.set('view engine', 'ejs');
 var jsonParser = app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
-/* ROUTING */
+/* ROUTING - VIEWS */
 // set the home page route
 app.get('/', function(request, response) {
-
-  // ejs render automatically looks in the views folder
   response.render('pages/index');
 });
 
@@ -55,6 +46,9 @@ app.get('/run_trial', function(request, response) {
   response.render('pages/run_trial');
 });
 
+/* ROUTING - RESTFUL API */
+
+/* show all data */
 app.get('/db', function (request, response) {
   pg.connect(process.env.DATABASE_URL, function(err, client, done) {
     client.query('SELECT * FROM test_data_1', function(err, result) {
@@ -67,7 +61,25 @@ app.get('/db', function (request, response) {
   });
 });
 
-app.post('/db', function(req, res){
+/* create a new trial */
+app.post('/db/create_new_trial', function(req, res){
+  console.log(req.body);
+  res.json(req.body);
+
+  pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+    client.query('CREATE TABLE IF NOT EXISTS test_data_1(time float,engagement float,frustration float, shorttermexcitement float, longtermexcitement float);',
+        function(err, result) {
+      done();
+      if (err)
+       { console.error(err); response.send("Error " + err); }
+      else
+       { console.log("Successfully created table for new trial"); }
+    });
+  });
+});
+
+/* send new headset reading to pgdb */
+app.post('/db/input_eeg_data', function(req, res){
   console.log(req.body);
   res.json(req.body);
 
