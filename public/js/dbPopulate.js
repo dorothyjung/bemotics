@@ -1,5 +1,5 @@
 $(document).on('click', '#createNewTrial', function() {
-  $.post("/db/create_new_trial/:proj1/:testuser1",
+  $.post("/db/create_new_trial/proj1/testuser1",
   {
       user: "Bob"
   },
