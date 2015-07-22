@@ -14,9 +14,8 @@
   <div class="container">
       <div class="row">
         <div class="col-md-7">
-          <h1><a href="/projects">Projects</a> > <a href="/participants"> Project 1</a> > Individual Result
+          <h1><a href="/projects">Projects</a> > <a href="/participants"> Project 1</a> > Individual Result</h1>
             <p class="lead">Participant: Alice Ma</p>
-          </h1>
         </div>
       </div> 
   </div><!--/container-->
@@ -49,7 +48,7 @@
 
                 var row, time, data = new google.visualization.DataTable();
                 data.addColumn('number', 'Time');
-                data.addColumn('number', 'Close');
+                data.addColumn('number', 'Engagement');
                 var total_value = 0;
                 for (var i=1;i<json.length;i++) {
                     row = json[i];
@@ -66,7 +65,7 @@
                 //console.log(data);
                 total_value=total_value/json.length;
                 var options = {
-                    title: 'My Weekly Plan',
+                    title: 'Headset Data',
                     is3D: 'true',
                     width: 1200,
                     height: 600

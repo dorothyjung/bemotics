@@ -1,5 +1,8 @@
+<!DOCTYPE html>
 <html>
-  <head>
+<head>
+  <% include ../partials/header.ejs %>
+
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript">
       google.load('visualization', '1', {'packages': ['table', 'map', 'corechart']});
@@ -55,9 +58,23 @@
             });
       }
     </script>
-  </head>
 
-  <body>
+</head>
+
+<body>
+
+  <div id="masthead">  
+    <div class="container">
+        <div class="row">
+          <div class="col-md-7">
+            <h1><a href="/projects">Projects</a> > <a href="/participants"> Project 1</a> > Overall Results</h1>
+          </div>
+        </div> 
+    </div><!--/container-->
+  </div><!--/masthead-->
+
+  <% include ../partials/nav.ejs %>
+
     <table align="center">
       <tr valign="top">
         <td style="width: 50%;">
