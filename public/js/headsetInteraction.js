@@ -43,6 +43,7 @@ $(document).ready(function(e){
   engine.Connect();
 });
 
+var timer;
 var startTime;
 $(document).on('click', '#startStream', function() {
   startTime = new Date();
@@ -71,7 +72,7 @@ function updateEmoEngine(){
   console.log("Short term Excitement: " + ExcitementShortTermScore)
   console.log("Long term Excitement: " + ExcitementLongTermScore)
   
-  sendToDatabase(currTime,
+  sendToDatabase(elapsedTime,
                 EngagementBoredomScore,
                 FrustrationScore,
                 ExcitementShortTermScore,
