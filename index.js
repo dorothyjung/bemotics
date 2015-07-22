@@ -85,7 +85,7 @@ app.post('/db/create_new_trial/:project/:id', function(req, res){
         function(err, result) {
       done();
       if (err)
-       { console.error(err); response.send("Error " + err); }
+       { console.error(err); res.send("Error " + err); }
       else
        { console.log("Successfully created table for new trial"); }
     });
