@@ -45,7 +45,7 @@ $(document).ready(function(e){
 
 var timer;
 var startTime;
-$(document).on('click', '#startStream', function() {
+$(document).on('click', '#adVideo1', function() {
   startTime = new Date();
   updateEmoEngine();
 });
