@@ -71,7 +71,7 @@ function updateEmoEngine(){
   console.log("Short term Excitement: " + ExcitementShortTermScore)
   console.log("Long term Excitement: " + ExcitementLongTermScore)
   
-  sendToDatabase(currMsec,
+  sendToDatabase(currTime,
                 EngagementBoredomScore,
                 FrustrationScore,
                 ExcitementShortTermScore,
