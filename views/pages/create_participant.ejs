@@ -8,38 +8,39 @@
 
   <% include ../partials/nav.ejs %>
 
-  <!--<form class="form-horizontal">-->
-  <fieldset>
-<form class="form col-md-12 center-block" style="text-align:center">
-  <!-- Form Name -->
-  <p><p><p><p><p>
-  <legend>Participant Information</legend>
-<p><p>
-  Participant Information
 
-  <!-- Text input-->
-  <div class="control-group">
-    <label class="control-label" for="textinput">Last Name</label>
-    <div class="controls">
-      <input id="textinput" name="textinput" placeholder="Name" class="input-xlarge" type="text">
-      
-    </div>
-  </div>
+
+
+<div class="container">
+<form class="form-horizontal">
+<fieldset>
+<form class="form col-md-12 center-block">
+  <!-- Form Name -->
+  <legend>Participant Information</legend>
+  <h2>Participant Information</h2>
+
 
   <!-- Text input-->
   <div class="control-group">
     <label class="control-label" for="textinput">First Name</label>
-    <div class="controls">
-      <input id="textinput" name="textinput" placeholder="Name" class="input-xlarge" type="text">
-      
+    <div class="controls controls-row">
+      <input id="textinput" name="textinput" placeholder="First Name" class="input-xlarge" type="text">   
     </div>
   </div>
 
   <!-- Text input-->
   <div class="control-group">
-    <label class="control-label" for="Year of Birth">Year of birth</label>
+    <label class="control-label" for="textinput">Last Name</label>
+    <div class="controls controls-row">
+      <input id="textinput" name="textinput" placeholder="Last Name" class="input-xlarge" type="text">      
+    </div>
+  </div>
+
+  <!-- Text input-->
+  <div class="control-group">
+    <label class="control-label" for="Year of Birth">Year of Birth</label>
     <div class="controls">
-      <input id="Year of Birth" name="Year of Birth" placeholder="Year of birth" class="input-xlarge" type="text">
+      <input id="Year of Birth" name="Year of Birth" placeholder="Year of Birth" class="input-xlarge" type="text">
       
     </div>
   </div>
@@ -48,11 +49,11 @@
   <div class="control-group">
     <label class="control-label" for="radios">Gender</label>
     <div class="controls">
-      <label class="radio" for="radios-0">
+      <label class="radio-inline" for="radios-0">
         <input name="radios" id="radios-0" value="Male" checked="checked" type="radio">
         Male
       </label>
-      <label class="radio" for="radios-1">
+      <label class="radio-inline" for="radios-1">
         <input name="radios" id="radios-1" value="Female" type="radio">
         Female
       </label>
@@ -88,40 +89,41 @@
   <!-- Multiple Radios (inline) -->
   <div class="control-group">
     <label class="control-label" for="Income Level">Income Level</label>
-    <div class="controls">
-      <label class="radio inline" for="Income Level-0">
+    <div class="controls controls-row">
+      <label class="radio-inline" for="Income Level-0">
         <input name="Income Level" id="Income Level-0" value="1" checked="checked" type="radio">
         1
       </label>
-      <label class="radio inline" for="Income Level-1">
+      <label class="radio-inline" for="Income Level-1">
         <input name="Income Level" id="Income Level-1" value="2" type="radio">
         2
       </label>
-      <label class="radio inline" for="Income Level-2">
+      <label class="radio-inline" for="Income Level-2">
         <input name="Income Level" id="Income Level-2" value="3" type="radio">
         3
       </label>
-      <label class="radio inline" for="Income Level-3">
+      <label class="radio-inline" for="Income Level-3">
         <input name="Income Level" id="Income Level-3" value="4" type="radio">
         4
       </label>
-      <label class="radio inline" for="Income Level-4">
+      <label class="radio-inline" for="Income Level-4">
         <input name="Income Level" id="Income Level-4" value="5" type="radio">
         5
       </label>
-      <label class="radio inline" for="Income Level-5">
+      <label class="radio-inline" for="Income Level-5">
         <input name="Income Level" id="Income Level-5" value="6" type="radio">
         6
       </label>
-      <label class="radio inline" for="Income Level-6">
+      <label class="radio-inline" for="Income Level-6">
         <input name="Income Level" id="Income Level-6" value="7" type="radio">
         7
       </label>
     </div>
   </div>
+</div>
 
   <!-- Button -->
-  <div class="control-group">
+  <div class="control-group" style="text-align:center">
     <label class="control-label" for=""></label>
     <div class="controls">
       <a href="/start_test" class="btn btn-success">Begin Test</a>
@@ -130,6 +132,7 @@
 
   </fieldset>
   </form>
+</form>
 
     <footer>
       <% include ../partials/footer.ejs %>

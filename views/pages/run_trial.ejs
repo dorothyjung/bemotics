@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/header.ejs %>
+  <% include ../partials/headset.ejs %>
+</head>
+
+<body>
+
+  <% include ../partials/nav.ejs %>
+
+    <div class="container">
+      <div class="row">
+        <button type="button" id="runNewTrial" name="runNewTrial" value="Run New Trial">Run New Trial</button>
+      </div>
+
+      <hr>
+
+      <div class="row">
+        <button type="button" id="startStream" name="startStream" value="Start Data Stream">Start Data Stream</button>
+        <button type="button" id="stopStream" name="stopStream" value="Stop Data Stream">Stop Data Stream</button>
+      </div>
+    </div>
+
+  <!-- Footer -->
+  <footer>
+    <% include ../partials/footer.ejs %>
+  </footer>
+
+</body>
+</html>

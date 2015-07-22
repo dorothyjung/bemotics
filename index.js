@@ -50,12 +50,12 @@ app.get('/start_test', function(request, response) {
   response.render('pages/start_test');
 });
 
-app.get('/aggregate_first', function(request, response) {
-  response.render('pages/aggregate_first');
+app.get('/results_individual', function(request, response) {
+  response.render('pages/results_individual');
 });
 
-app.get('/aggregate_second', function(request, response) {
-  response.render('pages/aggregate_second');
+app.get('/results_project', function(request, response) {
+  response.render('pages/results_project');
 });
 
 
