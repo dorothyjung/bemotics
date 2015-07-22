@@ -1,4 +1,4 @@
-# bemotics: emotics 2.0
+# minetics
 
 A Node.js app using [Express 4](http://expressjs.com/).
 

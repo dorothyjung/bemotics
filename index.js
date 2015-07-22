@@ -28,14 +28,6 @@ app.get('/dashboard', function(request, response) {
   response.render('pages/dashboard');
 });
 
-app.get('/realtime', function(request, response) {
-  response.render('pages/realtime');
-});
-
-app.get('/run_trial', function(request, response) {
-  response.render('pages/run_trial');
-});
-
 app.get('/create_participant', function(request, response) {
   response.render('pages/create_participant');
 });
@@ -52,10 +44,6 @@ app.get('/projects', function(request, response) {
   response.render('pages/projects');
 });
 
-app.get('/start_test', function(request, response) {
-  response.render('pages/start_test');
-});
-
 app.get('/results_individual', function(request, response) {
   response.render('pages/results_individual');
 });
@@ -63,6 +51,19 @@ app.get('/results_individual', function(request, response) {
 app.get('/results_project', function(request, response) {
   response.render('pages/results_project');
 });
+
+app.get('/run_te', function(request, response) {
+  response.render('pages/run_test');
+});
+
+app.get('/conduct_trial', function(request, response) {
+  response.render('pages/conduct_trial');
+});
+
+app.get('/set_up_trial', function(request, response) {
+  response.render('pages/set_up_trial');
+});
+
 
 /* ROUTING - RESTFUL API */
 
