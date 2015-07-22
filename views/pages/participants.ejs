@@ -7,44 +7,35 @@
 <body>
   <% include ../partials/nav.ejs %>
 
-  <p>hey
-<p>
   <div id="masthead">  
   <div class="container">
       <div class="row">
         <div class="col-md-7">
-          <h1><a href="/projects">Projects</a> > Project 1
+          <h1><a href="/projects">Projects</a> > Project 1</h1>
             <p class="lead">1 participant</p>
-          </h1>
         </div>
-        <!--<div class="col-md-5">
-            <div class="well well-lg"> 
-              <div class="row">
-                <div class="col-sm-6">
-                  <img src="//placehold.it/180x100" class="img-responsive">
-                </div>
-                <div class="col-sm-6">
-                  Some text here
-                </div>
-              </div>
-            </div>
-        </div>-->
       </div> 
   </div><!--/container-->
 </div><!--/masthead-->
 
-<!--button to create a participant-->
+<!--button to show all data-->
   <div class="control-group">
+      <label class="control-label" for=""></label>
+      <div class="controls" style="text-align:center">
+        <a href="/results_project" class="btn btn-default">View Data</a>
+      </div>
+
       <label class="control-label" for=""></label>
       <div class="controls" style="text-align:center">
         <a href="/create_participant" class="btn btn-primary">Create Participant</a>
       </div>
   </div>
+
 <!-- a participant-->
   <div class="container">
       <div class="row">
         <div class="col-md-7">
-          <h2><a href="/realtime">Alice Ma</a>
+          <h3><a href="/realtime">Alice Ma</a></h3>
             <p class="lead">20 Female Asian/Pacific Islander</p>
           </h2>
         </div>
