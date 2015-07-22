@@ -45,10 +45,18 @@ $(document).ready(function(e){
 
 var timer;
 var startTime;
-$(document).on('click', '#adVideo1', function() {
-  startTime = new Date();
-  updateEmoEngine();
+
+$('iframe').load(function(){
+  $(this).contents().find("body").on('click', function(event) { 
+    startTime = new Date();
+    updateEmoEngine();
+  });
 });
+
+// $(document).on('click', '#startStream', function() {
+//   startTime = new Date();
+//   updateEmoEngine();
+// });
 
 $(document).on('click', '#stopStream', function() {
   clearTimeout(timer);
