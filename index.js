@@ -109,7 +109,7 @@ app.post('/db/input_eeg_data/:project/:id', function(req, res){
         function(err, result) {
       done();
       if (err)
-       { console.error(err); response.send("Error " + err); }
+       { console.error(err); res.send("Error " + err); }
       else
        { console.log("Successfully inputted values into database"); }
     });
