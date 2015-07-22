@@ -45,16 +45,10 @@ $(document).ready(function(e){
 
 var timer;
 var startTime;
-
-$('.overlay').click(function(){
+$(document).on('click', '#startStream', function() {
   startTime = new Date();
   updateEmoEngine();
 });
-
-// $(document).on('click', '#startStream', function() {
-//   startTime = new Date();
-//   updateEmoEngine();
-// });
 
 $(document).on('click', '#stopStream', function() {
   clearTimeout(timer);
