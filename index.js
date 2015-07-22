@@ -52,16 +52,12 @@ app.get('/results_project', function(request, response) {
   response.render('pages/results_project');
 });
 
-app.get('/run_te', function(request, response) {
-  response.render('pages/run_test');
-});
-
 app.get('/conduct_trial', function(request, response) {
   response.render('pages/conduct_trial');
 });
 
-app.get('/set_up_trial', function(request, response) {
-  response.render('pages/set_up_trial');
+app.get('/participant_page', function(request, response) {
+  response.render('pages/participant_page');
 });
 
 
