@@ -1,4 +1,4 @@
-$(document).on('click', '#runNewTrial', function() {
+$(document).on('click', '#createNewTrial', function() {
   $.post("/db/create_new_trial",
   {
       user: "Bob"
