@@ -36,9 +36,36 @@ app.get('/run_trial', function(request, response) {
   response.render('pages/run_trial');
 });
 
+app.get('/create_participant', function(request, response) {
+  response.render('pages/create_participant');
+});
+
+app.get('/create_project', function(request, response) {
+  response.render('pages/create_project');
+});
+
+app.get('/participants', function(request, response) {
+  response.render('pages/participants');
+});
+
+app.get('/projects', function(request, response) {
+  response.render('pages/projects');
+});
+
+app.get('/start_test', function(request, response) {
+  response.render('pages/start_test');
+});
+
+app.get('/results_individual', function(request, response) {
+  response.render('pages/results_individual');
+});
+
+app.get('/results_project', function(request, response) {
+  response.render('pages/results_project');
+});
+
 /* ROUTING - RESTFUL API */
 
-/* show all data */
 app.get('/db', function (request, response) {
   pg.connect(process.env.DATABASE_URL, function(err, client, done) {
     client.query('SELECT * FROM test_data_1', function(err, result) {
