@@ -43,9 +43,9 @@ $(document).ready(function(e){
   engine.Connect();
 });
 
-var timer;
-
+var startTime;
 $(document).on('click', '#startStream', function() {
+  startTime = new Date();
   updateEmoEngine();
 });
 
@@ -57,7 +57,8 @@ function updateEmoEngine(){
 
   engine.ProcessEvents(500);
 
-  var currMsec = new Date().getTime();
+  var currTime = new Date();
+  var elapsedTime = currTime - startTime;
   console.log("Elapsed time: " + currMsec);
 
   var EngagementBoredomScore = es.AffectivGetEngagementBoredomScore();
