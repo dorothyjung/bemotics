@@ -56,7 +56,7 @@ $(document).on('click', '#stopStream', function() {
 
 function updateEmoEngine(){
 
-  engine.ProcessEvents(500);
+  engine.ProcessEvents(650);
 
   var currTime = new Date();
   var elapsedTime = currTime - startTime;
@@ -78,7 +78,7 @@ function updateEmoEngine(){
                 ExcitementShortTermScore,
                 ExcitementLongTermScore);
 
-  timer = setTimeout("updateEmoEngine()",250);
+  timer = setTimeout("updateEmoEngine()",500);
 }
 
 function sendToDatabase(seconds, EngagementBoredomScore, FrustrationScore, ExcitementShortTermScore, ExcitementLongTermScore){
