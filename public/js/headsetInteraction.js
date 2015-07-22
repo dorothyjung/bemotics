@@ -59,7 +59,7 @@ function updateEmoEngine(){
 
   var currTime = new Date();
   var elapsedTime = currTime - startTime;
-  console.log("Elapsed time: " + currMsec);
+  console.log("Elapsed time: " + elapsedTime);
 
   var EngagementBoredomScore = es.AffectivGetEngagementBoredomScore();
   var FrustrationScore = es.AffectivGetFrustrationScore();
