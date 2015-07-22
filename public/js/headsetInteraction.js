@@ -46,11 +46,9 @@ $(document).ready(function(e){
 var timer;
 var startTime;
 
-$('iframe').load(function(){
-  $(this).contents().find("body").on('click', function(event) { 
-    startTime = new Date();
-    updateEmoEngine();
-  });
+$('.overlay').click(function(){
+  startTime = new Date();
+  updateEmoEngine();
 });
 
 // $(document).on('click', '#startStream', function() {
