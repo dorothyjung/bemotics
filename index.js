@@ -76,12 +76,12 @@ app.get('/db', function (request, response) {
 });
 
 /* create a new trial */
-app.post('/db/create_new_trial', function(req, res){
+app.post('/db/create_new_trial/:project/:id', function(req, res){
   console.log(req.body);
   res.json(req.body);
 
   pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-    client.query('CREATE TABLE IF NOT EXISTS test_data_1(time float,engagement float,frustration float, shorttermexcitement float, longtermexcitement float);',
+    client.query("CREATE TABLE IF NOT EXISTS " + req.params.project + "_" + req.params.id + "(time float,engagement float,frustration float, shorttermexcitement float, longtermexcitement float);",
         function(err, result) {
       done();
       if (err)
@@ -93,7 +93,7 @@ app.post('/db/create_new_trial', function(req, res){
 });
 
 /* send new headset reading to pgdb */
-app.post('/db/input_eeg_data', function(req, res){
+app.post('/db/input_eeg_data/:project/:id', function(req, res){
   console.log(req.body);
   res.json(req.body);
 
@@ -104,7 +104,7 @@ app.post('/db/input_eeg_data', function(req, res){
   var lte = req.body.longtermexcitement;
 
   pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-    client.query('INSERT INTO test_data_1(time, engagement, frustration, shorttermexcitement, longtermexcitement) values($1,$2,$3,$4,$5);',
+    client.query("INSERT INTO " + req.params.project + "_" + req.params.id + "(time, engagement, frustration, shorttermexcitement, longtermexcitement) values($1,$2,$3,$4,$5);",
         [sec, engage, frust, ste, lte],
         function(err, result) {
       done();
