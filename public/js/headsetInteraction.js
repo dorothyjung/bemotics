@@ -78,7 +78,7 @@ function updateEmoEngine(){
                 ExcitementShortTermScore,
                 ExcitementLongTermScore);
 
-  timer = setTimeout("updateEmoEngine()",50);
+  timer = setTimeout("updateEmoEngine()",250);
 }
 
 function sendToDatabase(seconds, EngagementBoredomScore, FrustrationScore, ExcitementShortTermScore, ExcitementLongTermScore){
