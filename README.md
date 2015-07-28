@@ -1,6 +1,9 @@
 # minetics
 
-A Node.js app using [Express 4](http://expressjs.com/).
+Built in 2 weeks at European Innovation Academy 2015. Hosted on heroku [here](http://minetico.herokuapp.com/). More information available [here](http://mineti.co/). A Node.js app using [Express 4](http://expressjs.com/), Postgres db, Bootstrap front-end. Makes use of Emotiv SDK.
+
+Full business info available under 'docs'.
+
 
 ## Running Locally
 
@@ -22,13 +25,3 @@ $ heroku create
 $ git push heroku master
 $ heroku open
 ```
-
-## Documentation
-
-For more information about using Node.js on Heroku, see these Dev Center articles:
-
-- [Getting Started with Node.js on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
-- [Heroku Node.js Support](https://devcenter.heroku.com/articles/nodejs-support)
-- [Node.js on Heroku](https://devcenter.heroku.com/categories/nodejs)
-- [Best Practices for Node.js Development](https://devcenter.heroku.com/articles/node-best-practices)
-- [Using WebSockets on Heroku with Node.js](https://devcenter.heroku.com/articles/node-websockets)
