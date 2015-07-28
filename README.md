@@ -1,6 +1,6 @@
 # minetico
 
-Built in 2 weeks at European Innovation Academy 2015. Hosted on heroku [here](http://minetico.herokuapp.com/). More information available [here](http://mineti.co/). A Node.js app using [Express 4](http://expressjs.com/), Postgres db, Bootstrap front-end. Makes use of Emotiv SDK.
+Built in 2 weeks at European Innovation Academy 2015. More information available [here](http://mineti.co/). A Node.js app using [Express 4](http://expressjs.com/), Postgres db, Bootstrap front-end. Makes use of Emotiv SDK.
 
 Full business info available under 'docs'.
 
